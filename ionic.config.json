@@ -1,5 +1,7 @@
 {
   "name": "tiempoApi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

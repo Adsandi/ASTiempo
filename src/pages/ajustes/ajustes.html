@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ajustes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <form (ngSubmit)="saveForm()">
+            <ion-item [formGroup]="form">
+              <ion-label> Código Municipio:</ion-label>
+              <ion-input [(ngModel)]="idMunicipio" name="idMunicipio" type="text" formControlName="regularMunicipio">
+              </ion-input>
+            </ion-item>
+            <button ion-button type="submit" block>Guardar</button>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+dsadas
+  <ion-scroll scrollX="true" scrollY="true" class="data-scroll">
+    adad
+   <ion-list>
+     <ion-item *ngFor="let header of headerRow" text-center>
+        {{header}}
+     </ion-item>
+   </ion-list>
+     
+    
+  </ion-scroll>
+</ion-content>

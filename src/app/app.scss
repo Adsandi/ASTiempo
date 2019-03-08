@@ -14,3 +14,73 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+//Aquí editaremos algunas variables de "theme"
+
+.home{
+    background: color($colors,primary);
+    color:color($colors,light);
+    margin-top: 30px;
+}
+.toolbar-title{
+    text-align: center;
+}
+.tabs-md .tab-button-icon{
+    color:#ccc;
+}
+.temp{
+    font-size: 90px;
+    text-align: center;
+    font-weight: normal;
+}
+.location,.icon,.desc,.date{
+    text-align: center;
+}
+.date{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:#435d8c;
+}
+.icon img{
+    width: 100px;
+}
+.location{
+    font-size: 40px;
+}
+.desc{
+    font-size: 30px;
+}
+.prec{
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+//SPLASH
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #333;
+  
+    border-radius: 100%;  
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }

@@ -1,17 +1,76 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>ASTiempo</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<!--De ejemplo para las propiedades copia la url: "https://opendata.aemet.es/opendata/sh/5a455c26" -->
+<ion-content padding class="home">
+  <!-- <h2>A ver si funciona ya esto por favó</h2> -->
+  <ion-grid *ngIf="datosTiempo">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{datosTiempo.nombre}}</h2>
+        <h1 class="date">{{datosTiempo.elaborado}}</h1>
+        <div class="icon"><img src="http://icons-ak.wxug.com/i/c/k/partlycloudy.gif" alt=""></div>
+        <h3 class="desc">{{datosTiempo.prediccion.dia[0].estadoCielo[2].descripcion}}</h3>
+        <h1 class="temp">{{datosTiempo.prediccion.dia[0].estadoCielo[0].descripcion}}</h1>
+        <!--*ngIf="eso!="""-->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-list>
+        <ion-item>
+          <strong>Temperaturas: </strong>Max: {{datosTiempo.prediccion.dia[0].temperatura.maxima}}, Min:
+          {{datosTiempo.prediccion.dia[0].temperatura.minima}}
+        </ion-item>
+        <ion-item>
+          <strong>Sensación térmica: </strong>Max: {{datosTiempo.prediccion.dia[0].sensTermica.maxima}}, Min:
+          {{datosTiempo.prediccion.dia[0].sensTermica.minima}}
+        </ion-item>
+        <ion-item>
+          <strong>Humedad relativa: </strong>Max: {{datosTiempo.prediccion.dia[0].humedadRelativa.maxima}}, Min:
+          {{datosTiempo.prediccion.dia[0].humedadRelativa.minima}}
+        </ion-item>
+        <ion-item>
+          <strong>Probabilidad precipitación: </strong>
+          <div class="prec">
+            <ion-list>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[0].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[0].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[1].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[1].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[2].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[2].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[3].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[3].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[4].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[4].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[5].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[5].value}}%
+              </ion-item>
+              <ion-item>
+                Periodo: {{datosTiempo.prediccion.dia[0].probPrecipitacion[6].periodo}} →
+                {{datosTiempo.prediccion.dia[0].probPrecipitacion[6].value}}%
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+  <!-- <button ion-button (click)="getMetadatos()">Actualizar</button> -->
+  <!-- <p *ngIf="mostrar">{{datosTiempo.provincia}}</p>
+  <p *ngIf="mostrar">{{datosTiempo.nombre}}</p>
+  <p *ngIf="mostrar">{{datosTiempo.prediccion.dia[0].temperatura.maxima}}</p> -->
 </ion-content>
