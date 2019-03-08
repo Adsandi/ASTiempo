@@ -21,15 +21,17 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-dsadas
+  <!-- <button ion-button block (click)="downloadCSV()"><ion-icon name="download"></ion-icon>DESCARGAR CSV<ion-icon name="download"></ion-icon></button> -->
   <ion-scroll scrollX="true" scrollY="true" class="data-scroll">
-    adad
-   <ion-list>
-     <ion-item *ngFor="let header of headerRow" text-center>
-        {{header}}
-     </ion-item>
-   </ion-list>
-     
-    
+    <table border="1" class="data-table">
+      <tr>
+        <td *ngFor="let header of headerRow" text-center><b>{{ header }}</b></td>
+      </tr>
+      <tr *ngFor="let row of csvData; let i = index">
+        <td *ngFor="let data of row; let j = index; trackBy: trackByFn">
+          <ion-input type="text" [(ngModel)]="csvData[i][j]"></ion-input>
+        </td>
+      </tr>
+    </table>
   </ion-scroll>
 </ion-content>
